@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b176fc" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#e0c3fc" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Glowing Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+      50% { transform: scale(1.18) translate(15px, -10px); opacity: 0.65; }
+    }
+    @keyframes floatARBox {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-16px) rotate(4deg); }
+    }
+    @keyframes ringScan {
+      0% { r: 50; opacity: 0.8; stroke-width: 2; }
+      50% { r: 110; opacity: 0.3; stroke-width: 1.5; }
+      100% { r: 160; opacity: 0; stroke-width: 0.5; }
+    }
+    @keyframes beamFlow {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .orb1 {
+      transform-origin: 220px 110px;
+      animation: pulseOrb 8s ease-in-out infinite;
+    }
+    .orb2 {
+      transform-origin: 980px 300px;
+      animation: pulseOrb 10s ease-in-out infinite alternate;
+    }
+    .floating-cube {
+      transform-origin: 1050px 190px;
+      animation: floatARBox 6s ease-in-out infinite;
+    }
+    .scan-ring {
+      animation: ringScan 4s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+      transform-origin: 1050px 190px;
+    }
+    .scan-ring-delayed {
+      animation: ringScan 4s cubic-bezier(0.1, 0.8, 0.3, 1) infinite 2s;
+      transform-origin: 1050px 190px;
+    }
+    .grid-plane {
+      stroke-dasharray: 6 6;
+      animation: beamFlow 20s linear infinite;
+    }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="420" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" fill="url(#grid)" />
+
+  <!-- Animated Ambient Glowing Orbs in Background -->
+  <circle class="orb1" cx="220" cy="110" r="180" fill="url(#accentCyan)" filter="url(#glowCyan)" />
+  <circle class="orb2" cx="980" cy="300" r="220" fill="url(#accentPurple)" filter="url(#glowPurple)" />
+
+  <!-- Background AR Dynamic Perspective Matrix -->
+  <g opacity="0.25">
+    <path class="grid-plane" d="M 0 380 L 1200 380 M 0 350 L 1200 350 M 0 405 L 1200 405" stroke="#38bdf8" stroke-width="1.2" />
+    <path d="M 600 320 L 100 420 M 600 320 L 350 420 M 600 320 L 600 420 M 600 320 L 850 420 M 600 320 L 1100 420" stroke="#818cf8" stroke-width="1" />
+  </g>
+
+  <!-- Dynamic Right-Side AR Hologram Element (Behind Title Text / Right Flank) -->
+  <g class="floating-cube">
+    <!-- AR Scanner Rings -->
+    <circle class="scan-ring" cx="1050" cy="190" r="60" fill="none" stroke="#38bdf8" />
+    <circle class="scan-ring-delayed" cx="1050" cy="190" r="60" fill="none" stroke="#c084fc" />
+
+    <!-- Isometric AR 3D Bounding Cube -->
+    <!-- Top Face -->
+    <polygon points="1050,130 1110,165 1050,200 990,165" fill="#38bdf8" fill-opacity="0.35" stroke="#38bdf8" stroke-width="2.5" />
+    <!-- Left Face -->
+    <polygon points="990,165 1050,200 1050,270 990,235" fill="#6366f1" fill-opacity="0.3" stroke="#818cf8" stroke-width="2.5" />
+    <!-- Right Face -->
+    <polygon points="1050,200 1110,165 1110,235 1050,270" fill="#a855f7" fill-opacity="0.3" stroke="#c084fc" stroke-width="2.5" />
+
+    <!-- AR Target Corner Markers -->
+    <path d="M 970 145 L 970 135 L 980 135" stroke="#38bdf8" stroke-width="3" fill="none" />
+    <path d="M 1130 145 L 1130 135 L 1120 135" stroke="#38bdf8" stroke-width="3" fill="none" />
+    <path d="M 970 255 L 970 265 L 980 265" stroke="#38bdf8" stroke-width="3" fill="none" />
+    <path d="M 1130 255 L 1130 265 L 1120 265" stroke="#38bdf8" stroke-width="3" fill="none" />
+  </g>
+
+  <!-- Foreground Title and Content (Clear, High Contrast, Prominent) -->
+  <g transform="translate(80, 0)">
+    <!-- Category Pill -->
+    <g transform="translate(0, 75)">
+      <rect width="265" height="34" rx="17" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.5" />
+      <circle cx="18" cy="17" r="5" fill="#38bdf8">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <text x="32" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" letter-spacing="1.5">SPATIAL COMPUTING &amp; WebXR</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="165" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="900" fill="url(#textGrad)" letter-spacing="-0.5">
+      Awesome Augmented Reality Viewer
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#f1f5f9" opacity="0.95">
+      Curated Ecosystem of WebAR, 3D Model Viewers &amp; Spatial Frameworks
+    </text>
+
+    <!-- Descriptive Tagline -->
+    <text x="0" y="250" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#94a3b8">
+      SaaS Platforms &bull; Open-Source Engines &bull; WebXR Standards &bull; Gaussian Splats &bull; Quick Look &amp; Scene Viewer
+    </text>
+
+    <!-- Feature Badges Row -->
+    <g transform="translate(0, 290)">
+      <!-- Badge 1: WebAR -->
+      <g transform="translate(0, 0)">
+        <rect width="135" height="32" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1"/>
+        <text x="14" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">📱 WebAR / WebXR</text>
+      </g>
+      <!-- Badge 2: Open Source -->
+      <g transform="translate(148, 0)">
+        <rect width="145" height="32" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1"/>
+        <text x="14" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">⚡ Open Source 3D</text>
+      </g>
+      <!-- Badge 3: Cross Platform -->
+      <g transform="translate(306, 0)">
+        <rect width="150" height="32" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1"/>
+        <text x="14" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">🌐 Self-Hostable</text>
+      </g>
+      <!-- Badge 4: Production Ready -->
+      <g transform="translate(469, 0)">
+        <rect width="145" height="32" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1"/>
+        <text x="14" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">🚀 2026 Ecosystem</text>
+      </g>
+    </g>
+  </g>
+</svg>
