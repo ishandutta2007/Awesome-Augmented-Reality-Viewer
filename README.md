@@ -30,37 +30,26 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
 - [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
 - [Open-Source GitHub Projects](#open-source-github-projects)
-
 - [How to Contribute](#how-to-contribute)
-
 - [Disclaimer](#disclaimer)
 
+## Sector Overview & Market Dynamics
 
+The global augmented reality (AR) and web-based AR market is estimated between **$170B and $210B** in 2026, projected to surpass several hundred billion dollars by 2030 (30%+ CAGR) driven by browser-based try-ons, spatial computing, and e-commerce model placement. The sector demonstrates a **concentrated, bifurcated market dynamic**: underlying native mobile runtimes are heavily concentrated in an OS-level duopoly (Apple Quick Look / ARKit and Google Scene Viewer / ARCore), while web-level tooling, authoring suites, and 3D viewer services remain competitive across specialized platforms, open web standards, and emerging Gaussian splat pipelines.
 
 ## SaaS/Hosted Platforms
 
-
-
-| Product | Description | Pricing | Free Tier Limit |
-
-| :--- | :--- | :--- | :--- |
-
-| **[Apple Quick Look](https://developer.apple.com/augmented-reality/quick-look/)** | Native iOS AR viewer for USDZ files, triggered via AR Quick Look links or Safari. | **Free** (built into iOS). | **Fully free** for iOS users. No developer fees for basic usage. |
-
-| **[Google Scene Viewer](https://developers.google.com/ar/develop/scene-viewer)** | Android's native AR viewer for 3D models, triggered from web links or apps. | **Free** (built into Google Play Services for AR). | **Fully free** for Android users. Requires ARCore-supported device. |
-
-| **[Adobe Aero Player](https://www.adobe.com/products/aero.html)** | Viewer for AR experiences created in Adobe Aero, shareable via link. | Included with Adobe Aero (free Starter plan or Creative Cloud). | **Free** to view Aero experiences. Creating requires Aero access. |
-
-| **[8th Wall (Legacy Hosted Viewer)](https://8thwall.org)** | Formerly a paid WebAR platform. **Hosted viewing retired February 28, 2026**—now open source . | **No longer offered as SaaS**. | N/A (discontinued as SaaS). See Open-Source section. |
-
-| **[ZapWorks Viewer](https://zap.works/)** | Viewer for AR experiences built with ZapWorks Designer or Studio. | Quote-based. | **Free trial** for creation. Viewing is free. |
-
-| **[Sketchfab AR](https://sketchfab.com/)** | Web-based 3D viewer with AR mode for supported devices. | **Free** for viewing. **Pro** subscription for uploading private models. | **Free** to view models in AR. |
-
-
+| Product | Company Scale (Valuation / Revenue) | Description | Pricing | Free Tier Limit |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Apple Quick Look](https://developer.apple.com/augmented-reality/quick-look/)** | ~$5.1T Market Cap | Native iOS AR viewer for USDZ files, triggered via AR Quick Look links or Safari. | Free (bundled with iOS / macOS) | Unlimited viewing on compatible iOS/iPadOS devices (requires USDZ model assets, 0 developer fee) |
+| **[Google Scene Viewer](https://developers.google.com/ar/develop/scene-viewer)** | ~$4.1T Market Cap | Android native AR viewer for 3D models, triggered from web links or apps. | Free (bundled with Google Play Services for AR) | Unlimited viewing on supported ARCore Android devices (no session/view charges) |
+| **[Adobe Aero Player](https://www.adobe.com/products/aero.html)** | ~$100B Market Cap | Viewer for AR experiences created in Adobe Aero, shareable via link or QR code. | Free standalone viewer; authoring free or via Creative Cloud ($69.99/mo Pro) | Free plan includes 2 GB cloud document storage and unlimited scene viewing links |
+| **[Sketchfab AR](https://sketchfab.com/)** | ~$8.4M ARR (Sold to KitBash) | Web-based 3D model viewer with integrated WebXR and AR Quick Look mode. | Free basic viewer; Pro plan starts at $15/month ($180/year) | Free plan permits 10 public uploads/month (max 100 MB/file) and 5 annotations/model; private models require Pro |
+| **[ZapWorks Viewer](https://zap.works/)** | $45M Valuation / ~$5.1M ARR (Zappar) | Viewer for AR experiences built with ZapWorks Designer, Studio, or Mattercraft. | Starts at $12.99/month (Developer) or $3,060/year (Pro for commercial projects) | 14-day free trial (evaluation only; projects automatically unpublished when trial ends) |
+| **[8th Wall (Legacy Hosted Viewer)](https://8thwall.org)** | Acquired by Niantic (~$9B peak valuation) | Formerly a hosted commercial WebAR platform; retired hosted SaaS viewing on February 28, 2026. | Retired as SaaS (engine framework now open-source MIT; SLAM binary licensed separately) | Discontinued as a hosted SaaS product; replaced by self-hosted open-source framework |
 
 ## Open-Source GitHub Projects
 
