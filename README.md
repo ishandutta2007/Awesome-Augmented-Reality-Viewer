@@ -127,3 +127,5 @@ Your support keeps this ecosystem up to date! Thank you! 🙌
 - This is a **community-curated** list — not exhaustive and not an official commercial endorsement.
 - **8th Wall's hosted platform change**: The hosted SaaS viewing service was retired on February 28, 2026. The open-source framework covers Image Targets, Face Effects, and Sky Effects, but SLAM (world tracking) remains distributed as a binary.
 - **Hardware & browser compatibility**: AR capabilities depend on device sensors and OS runtimes (ARCore on Android, ARKit / Quick Look on iOS, and WebXR browser flags on desktop/headsets).
+# Awesome-Augmented-Reality-Viewer
+
